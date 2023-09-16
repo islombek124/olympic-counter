@@ -1,7 +1,10 @@
 //
 const scoreTable = document.querySelector(".score-table"),
     redWinBtn = document.querySelector(".red-win-btn"),
-    greenWinBtn = document.querySelector(".green-win-btn");
+    greenWinBtn = document.querySelector(".green-win-btn"),
+    redsTotal = document.querySelector(".reds-total"),
+    greensTotal = document.querySelector(".greens-total"),
+    modalBtn = document.querySelector('.modalBtn');
 
 // Create new column and column child
 let colEl = document.createElement("div");
@@ -64,3 +67,12 @@ function greenWinBtnClicked() {
     }
 }
 
+modalBtn.addEventListener('click', (e) => {
+    if (!cols.length) {
+        redsTotal.textContent = '0'
+        greensTotal.textContent = '0'
+    } else {
+        redsTotal.textContent = cols.join().split(',').filter(e => e === 'red').length
+        greensTotal.textContent = cols.join().split(',').filter(e => e === 'green').length
+    }
+})
