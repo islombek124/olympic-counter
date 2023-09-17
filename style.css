@@ -1,3 +1,11 @@
+html.dark > body {
+  background-color: #222;
+}
+
+html.dark > body .score-table {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 .col {
   display: block;
   max-width: 30px;
